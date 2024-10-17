@@ -83,7 +83,7 @@ if __name__ == "__main__":
     import time
     from read_binary_relations import read_binary_relations_from_txt
 
-    file_path = 'data/Варіант №60.txt'  # Replace with your actual file path
+    file_path = 'data/Варіант №60.txt'
     relations = read_binary_relations_from_txt(file_path)
 
     # Benchmarking Function
@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
     benchmark_results = benchmark_algorithms(relations)
 
-    # Optionally, analyze results
+    # Analyzing results
     print("\nBenchmark Results Summary:")
     for relation, algos in benchmark_results.items():
         print(f"\n{relation}:")
