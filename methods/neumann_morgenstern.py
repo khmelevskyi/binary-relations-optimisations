@@ -10,6 +10,9 @@ def get_incoming_sets(R: NDArray) -> 'dict[int, list]':
     R_t = R.T
     for i in range(R.shape[0]):
         incoming_sets[i] = (np.where(R_t[i] == 1)[0]).tolist()
+
+    # Increase both keys and values by 1 (to match the usual binary relation representation)
+    incoming_sets = {key + 1: [val + 1 for val in values] for key, values in incoming_sets.items()}
     return incoming_sets
 
 
@@ -78,7 +81,7 @@ def get_all_Q(incoming_sets: 'dict[int, list]'):
         Q[current_i] = list(set(Q[current_i-1] + new_keys))
 
 
-def Neumann_Morgenstern_optimization(R: NDArray):
+def Neumann_Morgenstern_optimization(R: NDArray) -> list:
     incoming_sets = get_incoming_sets(R) #знаходимо верхні перерізи для всіх альтернатив
     
     get_S0(incoming_sets) #S0
@@ -88,5 +91,5 @@ def Neumann_Morgenstern_optimization(R: NDArray):
     Q[0] = S[0] #Q0
     get_all_Q(incoming_sets) #STEP 2
 
-    C0 = Q[max(Q.keys())]
+    C0: list = Q[max(Q.keys())]
     return C0

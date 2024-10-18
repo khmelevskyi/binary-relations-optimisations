@@ -2,6 +2,7 @@ from methods.k_optimisation import k_optimization
 from methods.neumann_morgenstern import Neumann_Morgenstern_optimization
 from methods.read_binary_relations import read_binary_relations_from_txt
 from methods.acyclicity_check import adj_matrix_to_adj_list, is_acyclic_dfs
+from methods.graph_visualization import display_relation_graph
 
 
 file_path = 'data/Варіант №60.txt'
@@ -17,6 +18,7 @@ for relation_name, R_matrix in relations.items():
         print("____{}____".format(relation_name))
         print("Xнм: {}".format(solution))
         # visualize to prove that множина C0 є внутрішньо і зовнішньо стійкою
+        display_relation_graph(R_matrix, solution)
     else:
         print(f"БВ {relation_name} є не ациклічним")
         parameters = k_optimization(R_matrix)
