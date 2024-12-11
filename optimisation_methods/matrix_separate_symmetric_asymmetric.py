@@ -16,6 +16,7 @@ def display_str_matrix(matrix: NDArray, relation_name=None):
     # Print the header (column numbers)
     header = " " * (max_val_length + 2) + "  ".join(cell_format.format(i) for i in range(1, matrix.shape[0] + 1))
     print(header)
+    print()
 
     # Print each row with the row number
     for i, row in enumerate(matrix, start=1):

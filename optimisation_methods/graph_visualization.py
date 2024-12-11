@@ -22,7 +22,7 @@ def display_relation_graph(matrix: NDArray, solution: list):
     edge_colors = []
 
     color_map = plt.cm.get_cmap('tab10', len(solution))  # Unique colors for solution nodes
-    print(color_map.__dict__)
+    # print(color_map.__dict__)
 
     for node in range(1, num_elements + 1):
 
@@ -43,7 +43,7 @@ def display_relation_graph(matrix: NDArray, solution: list):
     pos = nx.circular_layout(G)
 
     # Draw nodes and edges with colors
-    nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=100, cmap=color_map)
+    nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=100) # , cmap=color_map
     nx.draw_networkx_labels(G, pos, font_size=6)
 
     # Draw edges

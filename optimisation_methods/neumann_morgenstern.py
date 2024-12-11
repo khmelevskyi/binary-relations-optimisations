@@ -85,22 +85,22 @@ def Neumann_Morgenstern_optimization(R: NDArray) -> list:
     incoming_sets = get_incoming_sets(R) #знаходимо верхні перерізи для всіх альтернатив
     
     get_S0(incoming_sets) #S0
-    print("S:")
-    print(S)
+    # print("S:")
+    # print(S)
 
     get_all_S(R, incoming_sets) #STEP 1
 
-    print("S:")
-    print(S)
-    print("S deltas:")
-    print(S_delta)
+    # print("S:")
+    # print(S)
+    # print("S deltas:")
+    # print(S_delta)
 
     Q[0] = S[0] #Q0
     get_all_Q(incoming_sets) #STEP 2
 
-    print("\nQ:")
-    print(Q)
-    print()
+    # print("\nQ:")
+    # print(Q)
+    # print()
 
     C0: list = Q[max(Q.keys())]
     return C0

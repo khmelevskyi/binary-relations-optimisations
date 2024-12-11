@@ -1,6 +1,6 @@
 import numpy as np
 from numpy._typing import NDArray
-from methods.matrix_separate_symmetric_asymmetric import separate_symmetric_asymmetric, display_str_matrix
+from optimisation_methods.matrix_separate_symmetric_asymmetric import separate_symmetric_asymmetric, display_str_matrix
 
 
 def check_x(S: NDArray):
@@ -23,22 +23,22 @@ def k_optimization(Rn: NDArray):
     Rn_str = separate_symmetric_asymmetric(Rn)
     
     S1=I+P+N
-    display_str_matrix(Rn_str, "S1")
+    # display_str_matrix(Rn_str, "S1")
     max_1, opt_1 = check_x(S1)
 
     S2=P+N
     S2_str = np.where(Rn_str == 'I', '0', Rn_str)
-    display_str_matrix(S2_str, "S2")
+    # display_str_matrix(S2_str, "S2")
     max_2, opt_2 = check_x(S2)
     
     S3=P+I
     S3_str = np.where(Rn_str == 'N', '0', Rn_str)
-    display_str_matrix(S3_str, "S3")
+    # display_str_matrix(S3_str, "S3")
     max_3, opt_3 = check_x(S3)
     
     S4=P
     S4_str = np.where(S3_str == 'I', '0', S3_str)
-    display_str_matrix(S4_str, "S4")
+    # display_str_matrix(S4_str, "S4")
     max_4, opt_4 = check_x(S4)
             
     parameters = {"1_max": max_1,
