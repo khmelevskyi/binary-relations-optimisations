@@ -30,10 +30,15 @@ Contains a few methods for binary relations optimisation and other helpful metho
 
 ## Usage
 
-To start the program do:
+To start the program to do binary relations optimization do:
 
 ```
-python3 main.py
+python3 -m optimisation_methods.main
+```
+
+To start the program to do multi-criteria decision making do:
+```
+python3 -m multi_criteria_decision_making.main
 ```
 
 ## Other

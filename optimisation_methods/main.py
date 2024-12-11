@@ -51,5 +51,5 @@ def find_optimal_solution(file_path: str = None, alien_relations: dict = None):
     return optimal_sets
 
 if __name__ == "__main__":
-    file_path = 'data/Варіант №60.txt'
+    file_path = 'optimisation_methods/data/Варіант №60.txt'
     find_optimal_solution(file_path=file_path)
